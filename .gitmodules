@@ -1,0 +1,4 @@
+[submodule "book"]
+	path = book
+	url = https://github.com/memeb4082/texplates/
+	branch = textbook

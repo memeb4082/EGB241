@@ -1,0 +1,74 @@
+\documentclass{book/custombook}
+
+\unitname{Electromagnetics and Machines}
+\unitcode{EGB241}
+\unitcoordinator{Jacob Coetzee}
+\author{Dinal Atapattu}
+
+\begin{document}
+    \maketitle
+    \tableofcontents
+    \chapter{Alternating Current}
+        \section{AC Signals}
+            \begin{itemize}
+                \item Direct Current: DC has polarity (direction) which stays the same. Amplitude may vary, but
+                    charge always flows in the same direction
+                \item Alternating Current: Voltage polarity and current direction reverses periodically
+                \item Period: Length of time (seconds) for one repetition of a cycle
+                \item Frequency: $f = \frac{1}{T}$ [Hz]
+            \end{itemize}
+        \section{Sine Wave}
+           In its purest form, AC signals are sine waves, for example:\\
+            $ v(t) = V_o \sin\left(2\pi ft\right) = V_o\sin\left(\omega t\right) $
+            Any AC wave that consists of only one frequency is sinusoidal\\
+            \textcolor{blue}{Utility AC is a sine wave with frequency 50Hz}
+        \section{Amplitude of an AC wave}
+            \begin{itemize}
+                \item \textcolor{black}{Peak Amplitude} ($V_p$): Maximum positive deviation
+                \item \textcolor{black}{Peak-to-Peak Amplitude} ($V_{p-p}$): Net difference between positive
+                    and negative peak amplitude
+                    \begin{figure}[H]
+                        \centering
+                        \begin{equation}V_{p-p} = 2\times V_p\end{equation}
+                        \caption{Peak to Peak Amplitude}
+                    \end{figure}
+                \item \textcolor{black}{Root-Mean-Square Amplitude} ($V_{rms}$): Effective amplitude of a sinusoidal AC
+                    wave. Average power dissipated in a resistor with an AC voltage = power dissipated with DC voltage of
+                    $V_{rms}$\\
+                    \textcolor{red}{$V_{rms} \leq V_{p} \forall \text{ AC Waves}$}
+                    \begin{figure}[H]
+                        \centering
+                        \begin{equation}
+                            V_{rms} = \sqrt{\frac{1}{T} \int^{T}_{0} v^{2}(t) dt} 
+                                    = \sqrt{\frac{1}{T} \int^{T+\alpha}_{\alpha} v^{2} (t) dt}
+                        \end{equation}
+                        \caption{RMS Amplitude}
+                    \end{figure}
+            \end{itemize}
+            \begin{figure}[H]
+                \centering
+                \begin{tabular}{|c|c|}
+                    \hline
+                    Sinusoidal AC Wave & $V_{rms} = \frac{V_o}{\sqrt{2}} \approx 0.707V_o$\\
+                    \hline
+                    Square Ac Wave & $V_{rms} = V_p$\\
+                    \hline
+                    Triangular Wave & $V_{rms} = \frac{V_o}{\sqrt{3}} \approx 0.577V_o$\\
+                    \hline
+                \end{tabular}
+                \caption{AC RMS Values}
+            \end{figure}
+        \section{Phase Shifting}
+            $f(x+\alpha)$ is a horizontal translation of $f(x)$\\
+            Where:
+            \begin{itemize}
+                If $ a > 0$, $f(x)$ is shifted to the left\\
+                If $ a < 0$, $f(x)$ is shifted to the right
+            \end{itemize}
+            If $v_1 (t) = V_o \sin(\omega t)$, then $v_2 = V_o\sin(\omega t + \phi) = 
+            V_o \sin\left[\omega\left(t + \frac{\phi}{\omega}\right)\right]$ is a shifted version of $v_1(t)$
+            by $\frac{\phi}{\omega}$ seconds to the left (where $\phi$ is in radians and positive$)\\
+            $v_2(t)$ leads $v_1(t)$ by $\phi$ radians ($180\times \frac{\phi}{\pi}$ degrees)\\
+            $v_1(t)$ lags $v_2(t)$ by $\phi$ radians ($180\times \frac{\phi}{\pi}$ degrees)
+    \listoffigures
+\end{document}
