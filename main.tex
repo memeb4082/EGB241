@@ -70,5 +70,102 @@
             by $\frac{\phi}{\omega}$ seconds to the left (where $\phi$ is in radians and positive$)\\
             $v_2(t)$ leads $v_1(t)$ by $\phi$ radians ($180\times \frac{\phi}{\pi}$ degrees)\\
             $v_1(t)$ lags $v_2(t)$ by $\phi$ radians ($180\times \frac{\phi}{\pi}$ degrees)
+        \section{Complex Numbers}
+            \subsection{Polar Form}
+                \begin{align*}
+                    \text{Rectangular form}: &= z = x+jy\\
+                    \text{Polar form}: &= z = re^{j\theta} = r\angle \theta\\
+                \end{align*}
+                \begin{itemize}
+                    \item r is called the \textbf{magnitude} of $z: r=|z| = \sqrt{x^2 + y^2}$
+                    \item $\theta$ is called the \textbf{argument} of $z: \theta = \atan(\frac{y}{x})$ or 
+                        more accurately $\theta = \text{arg}(x+jy)$, $-\pi < \theta \leq \pi $ radians (Convention)
+                \end{itemize}
+            \subsection{Properties of Complex Numbers}
+                \begin{figure}[H]
+                    \begin{subfigure}{\linewidth}
+                        \begin{align*}
+                            (x+jy)\pm(p+jq) = (x\pm p) + j(y\pm q)\\ \tag{add real and imaginary parts}
+                        \end{align*}
+                        \caption{Addition and Subtraction}
+                    \end{subfigure}
+                    \begin{subfigure}{\linewidth}
+                        \begin{align*}
+                            (x+jy)\times(p+jq) = (xp - yq) + j(yp + xq)\\
+                            \intertext{\text{Or in polar form}}
+                            Ae^{j\theta} \times Be^{j\phi} = ABe^{j(\theta + \phi)}\\ \tag{multiply magnitudes, add angles}
+                        \end{align*}
+                        \caption{Multiplication}
+                    \end{subfigure}
+                    \begin{subfigure}{\linewidth}
+                        \begin{align*}
+                            \intertext{By rationalisation}
+                            \frac{(x+jy)}{(p+jq)} &= \frac{(x+jy) \times (p-jq)}{(p+jq) \times (p-jq)} = \frac{(x+jy)\times (p-jq)}{(p^2+q^2)}\\
+                            \intertext{In polar form:}
+                            \frac{Ae^{j\theta}}{Be^{j\phi}} &= \frac{A}{B}e^{j(\theta - \phi)} \tag{divide magnitudes, subtract angles}
+                        \end{align*}
+                        \caption{Division}
+                    \end{subfigure}
+                    \begin{subfigure}{\linewidth}
+                        \begin{align*}
+                            e^{j\left(\theta +2\pi n\right)} &= e^{j\theta}e^{j2\pi n}\\
+                                                             &= e^{j\theta}\times 1\\
+                                                             &= e^{j\theta} \tag{\forall n \in \mathrm{N}}
+                        \end{align*}
+                        \caption{Cyclicity}
+                    \end{subfigure}
+                \caption{Complex Number Operations}
+                \end{figure}
+        \section{Magnetic Circuits}
+            \subsection{Phasors}
+                \begin{flalign*}
+                    v(t) = V_0 \cos(\omega t + \theta) = Re[Ve^{j\omega t}] = V_0 \angle \theta = V_0e^{j\theta}
+                \end{flalign*}
+                Only for sinusoids, component signals canot be represented as phasors (square, triangle waves, etc)\\
+                \subsubsection{Solving RL RC Circuits}
+                    \begin{flalign*}
+                        v(t) &= L \odv{i}{t} + Ri(t)\\
+                        Re\left[Ve^{j\omega t}\right] &= L \odv{}{t} Re\left[Ie^{j\omega t}\right]\\
+                                                      &= LRe\left[I \odv{}{t}e^{j\omega t}\right]\\
+                        Ve^{j\omega t} &= j\omega Ie^{j\omega t}\\
+                        V &= j\omega LI\\
+                    \end{flalign*}
+                    Given an RL circuit with the following values
+                    \begin{flalign}
+                        v_s(t) &= 50\cos(100t)\\
+                        C &= 0.2H\\
+                        R &= 30\Omega
+                    \end{flalign}
+                    Using KCL
+                    \begin{flalign*}
+                        V_s &= V_R + V_L\\
+                        &= IR + Ij\omega L\\
+                        &= I\left(30 + \times j100\times 0.2\right)\\
+                        50 &= I\left( 30 + j20\right)\\
+                        \frac{50}{30 + j20} &= I\\
+                        1.138 - j0.76923 &= I\\
+                        1.386\angle -33.7\deg &= I\\
+                        \therefore i(t) &= 1.386\cos(100t-0.588) [A]
+                    \end{flalign*}
+            \subsection{Oersted's Rules}
+                \begin{itemize}
+                    \item The magnetic field lines run encircle the current-carrying wire (Right hand screw rule)
+                    \item The magnetic field lines lie in a plan perpendicular to the wire
+                    \item If the direction of the current is reversed, the direction of the magnetic force reverses
+                    \item The strength of a field is directly proportional to the magnitude of the current
+                    \item The strength of the field at any point is inversely proportional to the distance of the point from the wire
+                \end{itemize}
+                This leads to Ampere's Law: The line integral of the magnetic field $B(x)$ around any closed curve $C$ is
+                proportional to the total current $I$ passing through any surface bounded by the curve
+                \begin{figure}[H]
+                    \centering
+                    \begin{flalign*}
+                        \oint \mathbf{B} \cdot dl &= \mu_0 I
+                    \end{flalign*}
+                    \caption{Ampere's Law}
+                \end{figure}
+            \subsection{Electric Ohm's Law}
+                
     \listoffigures
-\end{document}
+\end{document}:q
+:

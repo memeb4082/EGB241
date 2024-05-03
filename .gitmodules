@@ -2,3 +2,7 @@
 	path = book
 	url = https://github.com/memeb4082/texplates/
 	branch = textbook
+[submodule "tutorials/template"]
+	path = tutorials/template
+	url = https://github.com/memeb4082/texplates/
+	branch = tutorial
